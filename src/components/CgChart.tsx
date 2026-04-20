@@ -75,7 +75,7 @@ export function CgChart({
         ]}
         tooltip={({ point }) => (
           <div className="rounded-xl border border-white/10 bg-zinc-950/90 px-3 py-2 text-sm shadow-lg">
-            <div className="font-medium">{point.serieId}</div>
+            <div className="font-medium">{(point as any).serieId ?? (point as any).seriesId}</div>
             <div>CG: {Number(point.data.x).toFixed(2)} %MAC</div>
             <div>W: {Number(point.data.y).toFixed(0)} kg</div>
           </div>
