@@ -1,7 +1,7 @@
 {
-  "installCommand": "cd efb-next && npm ci",
-  "buildCommand": "cd efb-next && npm run build",
-  "devCommand": "cd efb-next && npm run dev -- --hostname 127.0.0.1 --port 3000",
-  "outputDirectory": "efb-next/.next"
+  "installCommand": "npm ci",
+  "buildCommand": "npm run build",
+  "devCommand": "npm run dev -- --hostname 127.0.0.1 --port 3000",
+  "outputDirectory": ".next"
 }
 
