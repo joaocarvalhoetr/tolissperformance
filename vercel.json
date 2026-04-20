@@ -1,7 +1,0 @@
-{
-  "installCommand": "npm ci",
-  "buildCommand": "npm run build",
-  "devCommand": "npm run dev -- --hostname 127.0.0.1 --port 3000",
-  "outputDirectory": ".next"
-}
-
