@@ -178,21 +178,23 @@ export function Efb() {
                   onChange={(e) => setNoPax(Number(e.target.value))}
                 />
               </Field>
-              <Field label="FWD CARGO" hint="kg">
+              <Field label="FWD CARGO" hint={`kg (0–${WB.MAX_FWD_CARGO_KG.toLocaleString()})`}>
                 <input
                   className="h-10 rounded-xl border border-white/10 bg-white/5 px-3 text-white outline-none focus:border-sky-400/40 focus:bg-white/10"
                   type="number"
                   min={0}
+                  max={WB.MAX_FWD_CARGO_KG}
                   step={50}
                   value={fwdCargoKg}
                   onChange={(e) => setFwdCargoKg(Number(e.target.value))}
                 />
               </Field>
-              <Field label="AFT CARGO" hint="kg">
+              <Field label="AFT CARGO" hint={`kg (0–${WB.MAX_AFT_CARGO_KG.toLocaleString()})`}>
                 <input
                   className="h-10 rounded-xl border border-white/10 bg-white/5 px-3 text-white outline-none focus:border-sky-400/40 focus:bg-white/10"
                   type="number"
                   min={0}
+                  max={WB.MAX_AFT_CARGO_KG}
                   step={50}
                   value={aftCargoKg}
                   onChange={(e) => setAftCargoKg(Number(e.target.value))}

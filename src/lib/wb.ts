@@ -8,6 +8,8 @@ export const WB = {
   // Limits
   MAX_PAX: 188,
   MAX_FUEL_KG: 18_623,
+  MAX_FWD_CARGO_KG: 3_402,
+  MAX_AFT_CARGO_KG: 6_033,
 
   // Geometry / CG
   // CG% = (CG_arm - LEMAC_arm) / MAC * 100
@@ -82,8 +84,8 @@ export function pointInPolygon(p: Point, polygon: Point[]): boolean {
 export function computeWb(input: WbInput): WbOutput {
   const noPax = Math.trunc(clamp(input.noPax ?? 0, 0, WB.MAX_PAX));
   const fuelKg = clamp(input.fuelKg ?? 0, 0, WB.MAX_FUEL_KG);
-  const fwdCargoKg = Math.max(0, input.fwdCargoKg ?? 0);
-  const aftCargoKg = Math.max(0, input.aftCargoKg ?? 0);
+  const fwdCargoKg = clamp(Math.max(0, input.fwdCargoKg ?? 0), 0, WB.MAX_FWD_CARGO_KG);
+  const aftCargoKg = clamp(Math.max(0, input.aftCargoKg ?? 0), 0, WB.MAX_AFT_CARGO_KG);
   const paxDistRatio = clamp(input.paxDistRatio ?? 0.5, 0, 1);
   const paxKgEach = clamp(input.paxKgEach ?? WB.STANDARD_PAX_KG, 50, 120);
 

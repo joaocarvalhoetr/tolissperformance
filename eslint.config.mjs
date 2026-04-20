@@ -12,6 +12,9 @@ const eslintConfig = defineConfig([
     "out/**",
     "build/**",
     "next-env.d.ts",
+    // Local / non-Next artifacts:
+    ".venv/**",
+    "legacy-python/**",
   ]),
 ]);
 
